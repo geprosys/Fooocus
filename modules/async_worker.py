@@ -171,10 +171,10 @@ def worker():
         steps = 30
 
         if performance_selection == 'Speed':
-            steps = 30
+            steps = 8
 
         if performance_selection == 'Quality':
-            steps = 60
+            steps = 30
 
         if performance_selection == 'Extreme Speed':
             print('Enter LCM mode.')
@@ -194,7 +194,7 @@ def worker():
             modules.patch.positive_adm_scale = advanced_parameters.adm_scaler_positive = 1.0
             modules.patch.negative_adm_scale = advanced_parameters.adm_scaler_negative = 1.0
             modules.patch.adm_scaler_end = advanced_parameters.adm_scaler_end = 0.0
-            steps = 8
+            steps = 4
 
         modules.patch.adaptive_cfg = advanced_parameters.adaptive_cfg
         print(f'[Parameters] Adaptive CFG = {modules.patch.adaptive_cfg}')
