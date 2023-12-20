@@ -247,7 +247,7 @@ default_image_number = get_config_item_or_set_default(
 checkpoint_downloads = get_config_item_or_set_default(
     key='checkpoint_downloads',
     default_value={
-        "realvisxlV30Turbo_v30Bakedvae.safetensors": "https://civitai.com/api/download/models/268861?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+        "realvisxlV30Turbo_v30Bakedvae.safetensors": "https://huggingface.co/Lykon/dreamshaper-xl-turbo/resolve/main/DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors?download=true"
         #"DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors": "https://huggingface.co/Lykon/dreamshaper-xl-turbo/resolve/main/DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors?download=true"
     },
     validator=lambda x: isinstance(x, dict) and all(isinstance(k, str) and isinstance(v, str) for k, v in x.items())
