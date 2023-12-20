@@ -194,7 +194,7 @@ default_loras = get_config_item_or_set_default(
 )
 default_cfg_scale = get_config_item_or_set_default(
     key='default_cfg_scale',
-    default_value=4.0,
+    default_value=1.3,
     validator=lambda x: isinstance(x, numbers.Number)
 )
 default_sample_sharpness = get_config_item_or_set_default(
@@ -204,7 +204,7 @@ default_sample_sharpness = get_config_item_or_set_default(
 )
 default_sampler = get_config_item_or_set_default(
     key='default_sampler',
-    default_value='dpmpp_2m_sde_gpu',
+    default_value='dpmpp_sde',
     validator=lambda x: x in modules.flags.sampler_list
 )
 default_scheduler = get_config_item_or_set_default(
@@ -214,11 +214,7 @@ default_scheduler = get_config_item_or_set_default(
 )
 default_styles = get_config_item_or_set_default(
     key='default_styles',
-    default_value=[
-        "Fooocus V2",
-        "Fooocus Enhance",
-        "Fooocus Sharp"
-    ],
+    default_value=[],
     validator=lambda x: isinstance(x, list) and all(y in modules.sdxl_styles.legal_style_names for y in x)
 )
 default_prompt_negative = get_config_item_or_set_default(
@@ -245,13 +241,14 @@ default_advanced_checkbox = get_config_item_or_set_default(
 )
 default_image_number = get_config_item_or_set_default(
     key='default_image_number',
-    default_value=2,
+    default_value=4,
     validator=lambda x: isinstance(x, int) and 1 <= x <= 32
 )
 checkpoint_downloads = get_config_item_or_set_default(
     key='checkpoint_downloads',
     default_value={
-        "DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors": "https://huggingface.co/Lykon/dreamshaper-xl-turbo/resolve/main/DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors?download=true"
+        "realvisxlV30Turbo_v30Bakedvae.safetensors": "https://civitai.com/api/download/models/268861?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+        #"DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors": "https://huggingface.co/Lykon/dreamshaper-xl-turbo/resolve/main/DreamShaperXL_Turbo_dpmppSdeKarras_half_pruned_6.safetensors?download=true"
     },
     validator=lambda x: isinstance(x, dict) and all(isinstance(k, str) and isinstance(v, str) for k, v in x.items())
 )
@@ -295,7 +292,7 @@ default_cfg_tsnr = get_config_item_or_set_default(
 )
 default_overwrite_step = get_config_item_or_set_default(
     key='default_overwrite_step',
-    default_value=-1,
+    default_value=6,
     validator=lambda x: isinstance(x, int)
 )
 default_overwrite_switch = get_config_item_or_set_default(
