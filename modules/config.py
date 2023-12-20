@@ -170,7 +170,7 @@ default_loras = get_config_item_or_set_default(
     key='default_loras',
     default_value=[
         [
-            "LCMTurboMix_DPM_SDE_Karras.safetensorss",
+            "None", #LCMTurboMix_DPM_SDE_Karras.safetensorss
             1.0
         ],
         [
